@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@layer base {
+  * {
+    text-align: center !important;
+  }
+  
+  input, select, textarea, label {
+    text-align: left !important;
+  }
+}
+
 :root {
   --background: #030712;
   --foreground: #f9fafb;
@@ -109,19 +119,4 @@ body {
 
 .input-gold::placeholder {
   color: #6b7280;
-}
-
-/* Force all text to center */
-* {
-  text-align: center !important;
-}
-
-/* Except form elements which should be left-aligned */
-input, select, textarea, label {
-  text-align: left !important;
-}
-
-/* Fleet cards */
-.glass-card .text-gradient {
-  text-align: center !important;
 }
