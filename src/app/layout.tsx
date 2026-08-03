@@ -28,9 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} style={{ textAlign: "center" }}>
         <Navigation />
-        <main>{children}</main>
+        <main style={{ textAlign: "center" }}>{children}</main>
         <Footer />
         <ChatWidget />
       </body>
