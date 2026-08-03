@@ -22,6 +22,27 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+section > div {
+  text-align: center;
+}
+
+footer ul {
+  text-align: center;
+}
+
+footer h3 {
+  text-align: center;
 }
 
 /* Gold gradient text */
