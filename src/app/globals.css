@@ -111,55 +111,17 @@ body {
   color: #6b7280;
 }
 
-/* Ensure all sections center content */
-section {
-  text-align: center;
-}
-
-section h1,
-section h2,
-section h3,
-section p {
-  text-align: center;
-}
-
-/* Center form labels */
-label {
-  text-align: left;
-  display: block;
-}
-
-/* Center card content */
-.glass-card h3,
-.glass-card p,
-.glass-card ul {
+/* Force all text to center */
+* {
   text-align: center !important;
 }
 
-.glass-card li {
-  text-align: center !important;
-  justify-content: center;
-}
-
-/* Center footer columns */
-footer {
-  text-align: center !important;
-}
-
-footer h3 {
-  text-align: center !important;
-}
-
-footer ul {
-  text-align: center !important;
-  list-style-position: inside;
-}
-
-footer li {
-  text-align: center !important;
+/* Except form elements which should be left-aligned */
+input, select, textarea, label {
+  text-align: left !important;
 }
 
 /* Fleet cards */
 .glass-card .text-gradient {
-  text-align: left;
+  text-align: center !important;
 }
