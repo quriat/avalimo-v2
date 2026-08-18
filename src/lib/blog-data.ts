@@ -12,6 +12,27 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+{
+    title: "Houston Sports Arenas Guide: Your Ride to Game Day",
+    slug: "houston-sports-arenas-guide",
+    summary: "From Minute Maid Park to NRG Stadium, here is everything you need to know about getting to Houston top sports venues in style.",
+    content: `<p>Houston is a world-class sports city, home to the Astros, Texans, Rockets, Dynamo, and Dash. Whether you are catching opening day at Minute Maid Park or a playoff game at Toyota Center, getting there and back should be part of the fun — not a headache. Here is your guide to Houston major sports venues and why a chauffeured ride beats driving every time.
+
+Minute Maid Park (Astros): Located in downtown, this ballpark has limited parking lots that fill up fast on game days. Street parking near the stadium runs \$20 to \$50, and post-game traffic can take 30 minutes just to exit. With AvaLimo, your chauffeur drops you at the gate and picks you up at the same spot after the final out — no circling, no surge pricing.
+
+NRG Stadium (Texans / Rodeo): The massive complex has plenty of parking but getting out after a Texans game or the Houston Livestock Show and Rodeo is an ordeal. Lots charge \$40 to \$100 for major events. A luxury SUV or Sprinter lets your group arrive together and leave together while the driver handles the navigation.
+
+Toyota Center (Rockets): In the heart of downtown, Toyota Center has minimal on-site parking. Nearby garages are \$20 to \$40 on event nights. Post-concert and post-game crowds make rideshare wait times balloon. A pre-booked sedan or SUV guarantees your ride is waiting when you walk out.
+
+Shell Energy Stadium (Dynamo / Dash): This intimate soccer stadium in East Downtown has no dedicated parking. Street parking is first-come, first-served. A chauffeured vehicle is the smartest way to attend a match, especially for groups.
+
+Whichever venue you are heading to, AvaLimo makes game day seamless. Flat-rate pricing, professional chauffeurs, and door-to-door service mean you focus on the game, not the parking. Call us at +18325678050 or book online at avalimo.net/book to reserve your ride.</p>`,
+    date: "Aug 2026",
+    read: "5 min read",
+    category: "Events",
+    emoji: "🏟️",
+    author: "Adam - AvaLimo",
+  },
   {
     title: "The Complete Guide to IAH Airport Transfers",
     slug: "iah-airport-transfers-guide",
