@@ -106,7 +106,7 @@ export default function Footer() {
           <div className="flex items-center gap-6 text-sm text-gray-500">
             <span>Houston, TX</span>
             <span>•</span>
-            <a href="mailto:adam@avalimo.net" className="hover:text-white transition-colors">
+            <a href="mailto:bookings@avalimo.net" className="hover:text-white transition-colors">
               adam@avalimo.net
             </a>
           </div>
