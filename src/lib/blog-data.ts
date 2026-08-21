@@ -34,6 +34,27 @@ Whichever venue you are heading to, AvaLimo makes game day seamless. Flat-rate p
     author: "Adam - AvaLimo",
   },
   {
+    slug: "hobby-airport-transfers-guide",
+    title: "Everything You Need to Know About Hobby Airport Transfers",
+    date: "2026-08-21",
+    formattedDate: "August 21, 2026",
+    category: "Airport",
+    emoji: "🛫",
+    read: "4",
+    summary: `William P. Hobby Airport is Houston's hidden gem for stress-free travel. Here is your complete guide to Hobby transfers, terminals, and tips.`,
+    content: `William P. Hobby Airport (HOU) has been Houston's most convenient airport since 1927. While George Bush Intercontinental handles most international traffic, Hobby is the smart choice for domestic travelers who value efficiency — especially with its Southwest Airlines hub and proximity to downtown.
+
+Hobby has one main terminal with two concourses, making it much easier to navigate than sprawling IAH. The airport is only 7 miles from downtown Houston — about 15 to 25 minutes with no traffic — and it is also the closest airport to the Texas Medical Center, NRG Park, and the Museum District.
+
+Why choose Hobby for your next flight? Security lines are generally shorter, the terminal is walkable from end to end in under 10 minutes, and it offers Southwest's largest hub in Texas with nonstop service to over 60 destinations. Parking at Hobby runs $12 to $25 daily, but lots fill up fast during holiday weekends and the Houston Rodeo.
+
+For travelers flying out of Hobby, we recommend booking a round-trip transfer. A professional chauffeur means no parking fees, no dragging luggage through a parking garage, and no rush to find a shuttle. Your driver monitors your flight and meets you at the arrivals curb with a sign, handles your bags, and gets you home in a clean, comfortable vehicle.
+
+Popular Hobby routes: to downtown Houston (15-20 min), the Galleria (20-30 min), Texas Medical Center (10-15 min), and the Museum District (10-15 min). We also do Hobby to Galveston (45-55 min) for cruisers and weekenders.
+
+Make your next Hobby trip effortless. Call us at +18325678050 or book online at avalimo.net/book to reserve your luxury transfer.`,
+  },
+  {
     title: "The Complete Guide to IAH Airport Transfers",
     slug: "iah-airport-transfers-guide",
     summary: "Navigating George Bush Intercontinental doesn't have to be stressful. Here's everything you need to know about luxury airport transfers.",
