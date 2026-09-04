@@ -31,6 +31,7 @@ const fleet = [
     passengers: "1-3",
     price: "from $55",
     image: "/images/mercedes_sclass.png",
+    alt: "Mercedes S-Class luxury sedan interior — leather seats, ambient lighting, Houston chauffeur service",
     features: ["Whisper-quiet cabin", "Leather seating", "Ambient light"],
   },
   {
@@ -39,6 +40,7 @@ const fleet = [
     passengers: "1-6",
     price: "from $82",
     image: "/images/cadillac_escalade.png",
+    alt: "Cadillac Escalade luxury SUV — premium black car service in Houston, up to 6 passengers",
     badge: "Most Booked",
     features: ["Spacious & powerful", "Rear entertainment", "Extra luggage"],
   },
@@ -48,6 +50,7 @@ const fleet = [
     passengers: "1-14",
     price: "from $128",
     image: "/images/mercedes_sprinter.png",
+    alt: "Mercedes Sprinter luxury group van — spacious interior for weddings and events, Houston",
     features: ["High ceilings", "Premium sound", "Reclining seats"],
   },
 ];
@@ -305,7 +308,7 @@ export default function Home() {
                 <div className="relative h-48 mb-6 flex items-center justify-center">
                   <Image
                     src={vehicle.image}
-                    alt={vehicle.name}
+                    alt={vehicle.alt}
                     width={300}
                     height={200}
                     className="object-contain group-hover:scale-105 transition-transform duration-500"
