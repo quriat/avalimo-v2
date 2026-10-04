@@ -76,6 +76,7 @@ export default function PricingPage() {
   const [pickup, setPickup] = useState("IAH Airport");
   const [dropoff, setDropoff] = useState("Downtown");
   const [vehicleType, setVehicleType] = useState("S-Class");
+  const [rideTime, setRideTime] = useState("");
   const [includeGratuity, setIncludeGratuity] = useState(true);
 
   const matchedRoute = routes.find(
@@ -294,7 +295,12 @@ export default function PricingPage() {
               </div>
               <div>
                 <label className="block text-sm text-gray-400 mb-2">Date & Time</label>
-                <input type="datetime-local" className="input-gold w-full" />
+                <input
+                  type="datetime-local"
+                  className="input-gold w-full"
+                  value={rideTime}
+                  onChange={(e) => setRideTime(e.target.value)}
+                />
               </div>
               <div>
                 <label className="block text-sm text-gray-400 mb-2">Vehicle</label>
@@ -340,7 +346,19 @@ export default function PricingPage() {
                     <p className="text-2xl font-bold text-gray-500">Select route</p>
                   )}
                 </div>
-                <Link href="/book" className="btn-gold">
+                <Link
+                  href={(() => {
+                    const vehicle = vehicleType.split(" ")[0];
+                    const params = new URLSearchParams();
+                    params.set("pickup", pickup);
+                    params.set("dropoff", dropoff);
+                    if (rideTime) params.set("time", rideTime);
+                    params.set("vehicle", vehicle);
+                    if (totalFare) params.set("price", String(totalFare));
+                    return `/book?${params.toString()}`;
+                  })()}
+                  className="btn-gold"
+                >
                   Book Now
                 </Link>
               </div>

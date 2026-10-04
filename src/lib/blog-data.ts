@@ -4,6 +4,7 @@ export interface BlogPost {
   summary: string;
   content: string;
   date: string;
+  formattedDate?: string;
   read: string;
   category: string;
   emoji: string;
@@ -41,6 +42,7 @@ Whichever venue you are heading to, AvaLimo makes game day seamless. Flat-rate p
     category: "Airport",
     emoji: "🛫",
     read: "4",
+    author: "Adam - AvaLimo",
     summary: `William P. Hobby Airport is Houston's hidden gem for stress-free travel. Here is your complete guide to Hobby transfers, terminals, and tips.`,
     content: `William P. Hobby Airport (HOU) has been Houston's most convenient airport since 1927. While George Bush Intercontinental handles most international traffic, Hobby is the smart choice for domestic travelers who value efficiency — especially with its Southwest Airlines hub and proximity to downtown.
 

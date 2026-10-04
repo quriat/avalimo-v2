@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -102,6 +104,122 @@ const reviews = [
     type: "Wedding",
   },
 ];
+
+const locations = [
+  "IAH Airport",
+  "Hobby Airport",
+  "Downtown",
+  "Galleria / Uptown",
+  "Sugar Land",
+  "The Woodlands",
+  "Katy",
+  "Galveston",
+];
+
+const vehicleOptions = [
+  { label: "Sedan — S-Class (1-3)", value: "S-Class" },
+  { label: "SUV — Escalade (1-6)", value: "Escalade" },
+  { label: "Sprinter (1-14)", value: "Sprinter" },
+];
+
+function QuoteForm() {
+  const router = useRouter();
+  const [pickup, setPickup] = useState("IAH Airport");
+  const [dropoff, setDropoff] = useState("Downtown");
+  const [time, setTime] = useState("");
+  const [vehicle, setVehicle] = useState("S-Class");
+
+  useEffect(() => {
+    if (!time) {
+      const now = new Date();
+      now.setMinutes(now.getMinutes() + 30);
+      now.setMinutes(Math.ceil(now.getMinutes() / 15) * 15);
+      const localIso = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
+        .toISOString()
+        .slice(0, 16);
+      setTime(localIso);
+    }
+  }, []);
+
+  const goToBooking = () => {
+    const params = new URLSearchParams();
+    params.set("pickup", pickup);
+    params.set("dropoff", dropoff);
+    if (time) params.set("time", time);
+    params.set("vehicle", vehicle);
+    router.push(`/book?${params.toString()}`);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="glass-card p-8 glow"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <label className="block text-sm text-gray-400 mb-2">Pickup Location</label>
+          <select
+            className="input-gold w-full"
+            value={pickup}
+            onChange={(e) => setPickup(e.target.value)}
+          >
+            {locations.map((loc) => (
+              <option key={loc} value={loc}>{loc}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm text-gray-400 mb-2">Drop-off Location</label>
+          <select
+            className="input-gold w-full"
+            value={dropoff}
+            onChange={(e) => setDropoff(e.target.value)}
+          >
+            {locations.map((loc) => (
+              <option key={loc} value={loc}>{loc}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm text-gray-400 mb-2">Date & Time</label>
+          <input
+            type="datetime-local"
+            className="input-gold w-full"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+          />
+        </div>
+        <div>
+          <label className="block text-sm text-gray-400 mb-2">Vehicle</label>
+          <select
+            className="input-gold w-full"
+            value={vehicle}
+            onChange={(e) => setVehicle(e.target.value)}
+          >
+            {vehicleOptions.map((v) => (
+              <option key={v.value} value={v.value}>{v.label}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-sm text-gray-400">Estimated fare</p>
+          <p className="text-2xl font-bold text-gradient">$—</p>
+        </div>
+        <button
+          type="button"
+          onClick={goToBooking}
+          className="btn-gold"
+        >
+          Request My Quote
+        </button>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Home() {
   return (
@@ -211,60 +329,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass-card p-8 glow"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <label className="block text-sm text-gray-400 mb-2">Pickup Location</label>
-                <select className="input-gold w-full">
-                  <option>IAH Airport</option>
-                  <option>Hobby Airport</option>
-                  <option>Downtown</option>
-                  <option>Galleria / Uptown</option>
-                  <option>Sugar Land</option>
-                  <option>The Woodlands</option>
-                  <option>Katy</option>
-                  <option>Galveston</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm text-gray-400 mb-2">Drop-off Location</label>
-                <select className="input-gold w-full">
-                  <option>Downtown</option>
-                  <option>IAH Airport</option>
-                  <option>Hobby Airport</option>
-                  <option>Galleria / Uptown</option>
-                  <option>Sugar Land</option>
-                  <option>The Woodlands</option>
-                  <option>Katy</option>
-                  <option>Galveston</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm text-gray-400 mb-2">Date & Time</label>
-                <input type="datetime-local" className="input-gold w-full" />
-              </div>
-              <div>
-                <label className="block text-sm text-gray-400 mb-2">Vehicle</label>
-                <select className="input-gold w-full">
-                  <option>Sedan — S-Class (1-3)</option>
-                  <option>SUV — Escalade (1-6)</option>
-                  <option>Sprinter (1-14)</option>
-                </select>
-              </div>
-            </div>
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-gray-400">Estimated fare</p>
-                <p className="text-2xl font-bold text-gradient">$—</p>
-              </div>
-              <button className="btn-gold">Request My Quote</button>
-            </div>
-          </motion.div>
+          <QuoteForm />
         </div>
       </section>
 
