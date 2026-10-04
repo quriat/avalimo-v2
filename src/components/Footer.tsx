@@ -104,7 +104,7 @@ export default function Footer() {
             © {new Date().getFullYear()} AvaLimo. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm text-gray-500">
-            <span>Houston, TX</span>
+            <span>Missouri City, TX 77459</span>
             <span>•</span>
             <a href="mailto:bookings@avalimo.net" className="hover:text-white transition-colors">
               adam@avalimo.net

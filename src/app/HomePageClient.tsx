@@ -23,7 +23,7 @@ const stagger = {
 const stats = [
   { number: "5.0", label: "Google Rating" },
   { number: "500+", label: "Rides Completed" },
-  { number: "24/7", label: "Available" },
+  { number: "24/7", label: "Dispatch" },
 ];
 
 const fleet = [
@@ -33,6 +33,7 @@ const fleet = [
     passengers: "1-3",
     price: "from $55",
     image: "/images/mercedes_sclass.png",
+    alt: "Mercedes S-Class luxury sedan interior — leather seats, ambient lighting, Houston chauffeur service",
     features: ["Whisper-quiet cabin", "Leather seating", "Ambient light"],
   },
   {
@@ -41,6 +42,7 @@ const fleet = [
     passengers: "1-6",
     price: "from $82",
     image: "/images/cadillac_escalade.png",
+    alt: "Cadillac Escalade luxury SUV — premium black car service in Houston, up to 6 passengers",
     badge: "Most Booked",
     features: ["Spacious & powerful", "Rear entertainment", "Extra luggage"],
   },
@@ -50,6 +52,7 @@ const fleet = [
     passengers: "1-14",
     price: "from $128",
     image: "/images/mercedes_sprinter.png",
+    alt: "Mercedes Sprinter luxury group van — spacious interior for weddings and events, Houston",
     features: ["High ceilings", "Premium sound", "Reclining seats"],
   },
 ];
@@ -58,50 +61,50 @@ const services = [
   {
     icon: "✈️",
     title: "Airport Transfers",
-    description: "IAH & Hobby with real-time flight tracking, meet & greet, and luggage help.",
+    description: "IAH & Hobby with real-time flight tracking. We monitor your flight and adjust — even if you're delayed. Meet & greet at the gate.",
   },
   {
     icon: "💼",
     title: "Corporate Travel",
-    description: "Punctual, professional chauffeurs for meetings and client entertainment.",
+    description: "Punctual, professional chauffeurs for meetings and client entertainment. Your team arrives on time, every time.",
   },
   {
     icon: "💍",
     title: "Weddings",
-    description: "White-glove service and photo-worthy arrivals for your biggest day.",
+    description: "White-glove service and photo-worthy arrivals for your biggest day. Coordinated with your wedding planner.",
   },
   {
     icon: "🎬",
     title: "Concerts & Events",
-    description: "Toyota Center, NRG, 713 Music Hall. Skip the parking, we'll be waiting.",
+    description: "Toyota Center, NRG, 713 Music Hall. Skip the parking, we'll be waiting when the show ends.",
   },
   {
     icon: "🎵",
     title: "Nights Out & Parties",
-    description: "BYOB Sprinters and party vans for the bride tribe and group nights.",
+    description: "BYOB Sprinters and party vans for the bride tribe and group nights. Everyone stays together, everyone gets home safe.",
   },
   {
     icon: "🍷",
     title: "Wine & Brewery Tours",
-    description: "Hill Country wineries and Houston breweries, safe and fully custom.",
+    description: "Hill Country wineries and Houston breweries. No designated driver needed — just good company and great wine.",
   },
 ];
 
 const reviews = [
   {
-    text: "Everything was perfect, from booking to arrival. The vehicle was immaculate and the driver was professional and courteous.",
+    text: "My flight was delayed 2 hours. They tracked it and adjusted. Driver was waiting when I landed at 1 AM. That's service.",
     author: "David M.",
-    type: "Airport Transfer",
+    type: "IAH Airport Transfer",
   },
   {
-    text: "Best airport transfer I've ever had. My flight was delayed and they were still waiting when I landed.",
+    text: "Booked for my wife's birthday dinner. The S-Class was spotless, driver opened the door, even had water waiting. She felt like a celebrity.",
     author: "Jennifer K.",
-    type: "IAH Pickup",
+    type: "Night Out",
   },
   {
-    text: "Used them for our wedding, absolutely perfect. The S-Class was stunning and the chauffeur helped with everything.",
+    text: "Used them for our wedding. The Sprinter fit the whole bridal party. Driver coordinated with our planner and was 10 minutes early. Perfect.",
     author: "Michael & Sarah T.",
-    type: "Wedding",
+    type: "Wedding Transportation",
   },
 ];
 
@@ -243,14 +246,13 @@ export default function Home() {
               Houston&apos;s Premium Chauffeur Service
             </p>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-              Arrive in{" "}
-              <span className="text-gradient italic">absolute</span>
-              <br />
-              luxury.
+              Your flight lands.{" "}
+              <span className="text-gradient italic">We&apos;re already there.</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
-              Airport transfers, corporate travel, weddings and nights out.
-              Flat rates, zero surge, always on time.
+              Real-time flight tracking, meet & greet at the gate, and a flat rate
+              locked in before you land. No surge. No surprises. Just a black car
+              waiting when you step out.
             </p>
           </motion.div>
 
@@ -261,13 +263,13 @@ export default function Home() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
             <Link href="/book" className="btn-gold text-lg px-8 py-4">
-              Reserve Your Car
+              Get Your Flat Rate →
             </Link>
             <Link
               href="/fleet"
               className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"
             >
-              View the Fleet
+              See the Fleet
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -322,10 +324,10 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              A flat rate, <span className="text-gradient italic">sent in minutes.</span>
+              See your price in <span className="text-gradient italic">60 seconds.</span>
             </h2>
             <p className="text-gray-400 text-lg">
-              Never a surge. Tell us where you&apos;re going and we&apos;ll respond with a transparent price.
+              Tell us where you&apos;re going. We&apos;ll text you a flat rate — no surge, no hidden fees, no surprises.
             </p>
           </motion.div>
 
@@ -370,7 +372,7 @@ export default function Home() {
                 <div className="relative h-48 mb-6 flex items-center justify-center">
                   <Image
                     src={vehicle.image}
-                    alt={vehicle.name}
+                    alt={vehicle.alt}
                     width={300}
                     height={200}
                     className="object-contain group-hover:scale-105 transition-transform duration-500"
@@ -516,16 +518,15 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div {...fadeInUp}>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready when{" "}
-              <span className="text-gradient italic">you are.</span>
+              Your ride is{" "}
+              <span className="text-gradient italic">60 seconds away.</span>
             </h2>
             <p className="text-gray-400 text-lg mb-8">
-              Book online in 30 seconds. Talk to our AI assistant or reach
-              dispatch directly.
+              Two ways to book: get a quote online or call dispatch directly. Flat rate, no surprises.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/book" className="btn-gold text-lg px-8 py-4">
-                Start a Booking
+                Get Your Quote →
               </Link>
               <a
                 href="tel:+18325678050"

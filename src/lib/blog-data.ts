@@ -13,6 +13,27 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "galveston-cruise-port-transportation-guide",
+    title: "Galveston Cruise Port Transportation: Your Complete Guide",
+    date: "2026-08-22",
+    formattedDate: "August 22, 2026",
+    category: "Travel Tips",
+    emoji: "🚢",
+    read: "4",
+    summary: `Everything Houston cruisers need to know about getting to the Port of Galveston smoothly. Tips on terminals, timing, and why a chauffeured transfer beats parking every time.`,
+    content: `Every year, hundreds of thousands of Houston-area travelers depart from the Port of Galveston on Royal Caribbean, Carnival, Disney, and Norwegian cruise lines. Getting from your front door to the terminal without stress makes a huge difference in how your vacation starts.
+
+The Port of Galveston has three main cruise terminals along Harborside Drive: Terminal 1 (Royal Caribbean and Norwegian), Terminal 2 (Carnival and Disney), and Terminal 3 (additional Carnival departures). All are about 50 miles from downtown Houston, about 45 to 60 minutes in normal traffic.
+
+Driving yourself means paying premium long-term parking rates of $15 to $25 per day. A 7-day cruise costs over $100 just to park, and the lots fill up fast on holiday weekends. Rideshare prices surge on cruise days, sometimes doubling the fare.
+
+A flat-rate chauffeured transfer eliminates every hassle. Your driver picks you up at home, loads the luggage, and drops you at the terminal door. No parking garages, no shuttle buses, no dragging suitcases across hot pavement. On return day, we track your ship and are waiting when you clear customs.
+
+Pro tip: book your transfer for 10:00 to 10:30 AM. Arriving at the terminal around 11:00 lets you skip the longest check-in lines and board early to explore the ship before sail-away.
+
+Ready to start your vacation in style? Call us at +18325678050 or book online at avalimo.net/book to reserve your Galveston cruise transfer.`,
+  },
 {
     title: "Houston Sports Arenas Guide: Your Ride to Game Day",
     slug: "houston-sports-arenas-guide",

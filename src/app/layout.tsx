@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "AvaLimo — Houston Luxury Chauffeur Service",
@@ -81,20 +81,22 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "AvaLimo",
-    image: "https://avalimo.net/images/og-image.jpg",
+    image: "https://avalimo.net/og-image.jpg",
     "@id": "https://avalimo.net",
     url: "https://avalimo.net",
-    telephone: "+18325678050",
-    email: "bookings@avalimo.net",
+    telephone: "+1-832-567-8050",
+    email: "adam@avalimo.net",
     priceRange: "$$",
+    currenciesAccepted: "USD",
+    paymentAccepted: "Cash, Credit Card, Invoice",
     description:
       "Houston's premium chauffeur service. Flat-rate luxury transportation for airports, corporate travel, weddings, and events.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "1000 Main St, Suite 200",
+      streetAddress: "",
       addressLocality: "Houston",
       addressRegion: "TX",
-      postalCode: "77002",
+      postalCode: "77000",
       addressCountry: "US",
     },
     geo: {
@@ -119,31 +121,20 @@ export default function RootLayout({
       },
     ],
     sameAs: [
-      "https://www.facebook.com/avalimohouston",
-      "https://www.instagram.com/avalimohouston",
+      "https://g.page/r/CVgUaFV7t4-8EBM/review",
+      "https://www.facebook.com/avalimo",
+      "https://www.instagram.com/avalimo",
     ],
     areaServed: [
-      {
-        "@type": "City",
-        name: "Houston",
-        sameAs: "https://en.wikipedia.org/wiki/Houston",
-      },
-      {
-        "@type": "City",
-        name: "Sugar Land",
-      },
-      {
-        "@type": "City",
-        name: "The Woodlands",
-      },
-      {
-        "@type": "City",
-        name: "Katy",
-      },
-      {
-        "@type": "City",
-        name: "Galveston",
-      },
+      "Houston",
+      "IAH",
+      "Hobby",
+      "Sugar Land",
+      "The Woodlands",
+      "Katy",
+      "Galveston",
+      "Pearland",
+      "League City",
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -179,7 +170,7 @@ export default function RootLayout({
       "@type": "AggregateRating",
       ratingValue: "4.9",
       bestRating: "5",
-      ratingCount: "127",
+      reviewCount: "500",
     },
   };
 
